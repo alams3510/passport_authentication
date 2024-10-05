@@ -2,8 +2,14 @@ const express = require("express");
 const passport = require("passport");
 const dotenv = require("dotenv");
 const UserModal = require("./model");
+const cors = require("cors");
 dotenv.config();
 const app = express();
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 const port = process.env.PORT || 5000;
 require("./database/db");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;

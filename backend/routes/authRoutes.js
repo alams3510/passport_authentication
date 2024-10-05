@@ -14,7 +14,7 @@ router.get(
     // Successful login
     const { name, email, image } = req.user;
     res.redirect(
-      `http://localhost:5173/dashboard?name=${name}&email=${email}&image=${image}`
+      `${process.env.REDIRECT_URL}?name=${name}&email=${email}&image=${image}`
     ); // Redirect to the frontend
   }
 );
